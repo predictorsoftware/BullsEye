@@ -78,8 +78,9 @@
 			isa = PBXGroup;
 			children = (
 				747870631ABA5A200017BBED /* AppDelegate.swift */,
-				747870651ABA5A200017BBED /* ViewController.swift */,
-				747870671ABA5A200017BBED /* Main.storyboard */,
+				747870851AC117440017BBED /* Model Layer */,
+				747870841AC117350017BBED /* View Layer */,
+				747870831AC117190017BBED /* Controller Layer */,
 				7478706A1ABA5A200017BBED /* Images.xcassets */,
 				7478706C1ABA5A200017BBED /* LaunchScreen.xib */,
 				747870611ABA5A200017BBED /* Supporting Files */,
@@ -110,6 +111,29 @@
 				747870781ABA5A210017BBED /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		747870831AC117190017BBED /* Controller Layer */ = {
+			isa = PBXGroup;
+			children = (
+				747870651ABA5A200017BBED /* ViewController.swift */,
+			);
+			name = "Controller Layer";
+			sourceTree = "<group>";
+		};
+		747870841AC117350017BBED /* View Layer */ = {
+			isa = PBXGroup;
+			children = (
+				747870671ABA5A200017BBED /* Main.storyboard */,
+			);
+			name = "View Layer";
+			sourceTree = "<group>";
+		};
+		747870851AC117440017BBED /* Model Layer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Model Layer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
