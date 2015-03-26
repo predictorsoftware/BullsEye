@@ -13,6 +13,7 @@
 		7478706B1ABA5A200017BBED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7478706A1ABA5A200017BBED /* Images.xcassets */; };
 		7478706E1ABA5A200017BBED /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7478706C1ABA5A200017BBED /* LaunchScreen.xib */; };
 		7478707A1ABA5A210017BBED /* BullsEyeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747870791ABA5A210017BBED /* BullsEyeTests.swift */; };
+		748277C31AC46CEE000AE6E6 /* BullsEye.html in Resources */ = {isa = PBXBuildFile; fileRef = 748277C21AC46CEE000AE6E6 /* BullsEye.html */; };
 		74A54F681AC3E5B100B37B76 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A54F671AC3E5B100B37B76 /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		747870731ABA5A210017BBED /* BullsEyeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BullsEyeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		747870781ABA5A210017BBED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		747870791ABA5A210017BBED /* BullsEyeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullsEyeTests.swift; sourceTree = "<group>"; };
+		748277C21AC46CEE000AE6E6 /* BullsEye.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = BullsEye.html; sourceTree = "<group>"; };
 		74A54F671AC3E5B100B37B76 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +81,7 @@
 		747870601ABA5A200017BBED /* BullsEye */ = {
 			isa = PBXGroup;
 			children = (
+				748277C21AC46CEE000AE6E6 /* BullsEye.html */,
 				747870631ABA5A200017BBED /* AppDelegate.swift */,
 				747870851AC117440017BBED /* Model Layer */,
 				747870841AC117350017BBED /* View Layer */,
@@ -220,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				747870691ABA5A200017BBED /* Main.storyboard in Resources */,
+				748277C31AC46CEE000AE6E6 /* BullsEye.html in Resources */,
 				7478706E1ABA5A200017BBED /* LaunchScreen.xib in Resources */,
 				7478706B1ABA5A200017BBED /* Images.xcassets in Resources */,
 			);

@@ -5,6 +5,7 @@
 //  Created by Gru on 03/18/15.
 //  Copyright (c) 2015 GruTech. All rights reserved.
 //
+// Apprentice Tutorial #1
 
 import UIKit
 
@@ -14,8 +15,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var target: UILabel!
-    @IBOutlet weak var score: UILabel!
-    @IBOutlet weak var round: UILabel!
+    @IBOutlet weak var  score: UILabel!
+    @IBOutlet weak var  round: UILabel!
 
     var currentValue: Int = 0
     var sliderValue:  Int = 0
@@ -29,6 +30,26 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         startNewRound()
         updateLabels()
+
+
+        // Apprentice Tutorial #1 p.112-113, Perking up the slider
+        let thumbImageNormal = UIImage( named: "SliderThumb-Normal" )
+        slider.setThumbImage( thumbImageNormal, forState: .Normal )
+
+        let thumbImageHighLighted = UIImage( named: "SliderThumb-Highlighted" )
+        slider.setThumbImage( thumbImageHighLighted, forState: .Highlighted )
+
+        let insets = UIEdgeInsets( top: 0, left: 14, bottom: 0, right: 14 )
+
+        if let trackLeftImage = UIImage( named: "SliderTrackLeft" ) {
+            let trackLeftResizable = trackLeftImage.resizableImageWithCapInsets( insets )
+            slider.setMinimumTrackImage( trackLeftResizable, forState: .Normal )
+        }
+
+        if let trackRightImage = UIImage( named: "SliderTrackRight" ) {
+            let trackRightResizeable = trackRightImage.resizableImageWithCapInsets( insets )
+            slider.setMaximumTrackImage( trackRightResizeable, forState: .Normal )
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,7 +97,7 @@ class ViewController: UIViewController {
         scoreValue += points
 
 
-        var message = "\nYou scored \(points) points"
+        var message = "\nYou scored \(points) points\n\nMissed target by \(difference) with a \(currentValue)/\(targetValue)."
         if DEBUG {
             message = "The value of the slider is: \(currentValue)"
                     + "\nThe target value is: \(targetValue)"
@@ -105,30 +126,36 @@ class ViewController: UIViewController {
     @IBAction func sliderMoved( slider: UISlider ) {
 
         self.currentValue = lroundf(slider.value)
-        println( "The value of the slider is now: \(self.currentValue)" )
+        if self.DEBUG { println( "The value of the slider is now: \(self.currentValue)" ) }
     }
 
     // Implementing the 'Start Over' button.  p.88
     @IBAction func startOver() {
 
         // Exercise was just to restart the game.  I pumped it up a little by asking the 'Are you sure' question by
-        // allowing the player to cancel the 'new game' request resume the current game.
+        // allowing the player to cancel the 'new game' request and resume the current game.
 
-        // println( "Let's see if the player wants to start over w/ a new game or continue." )
+        if self.DEBUG { println( "Let's see if the player wants to start over w/ a new game or continue." ) }
 
-        var refreshAlert = UIAlertController(title: "New Game?", message: "Would you like to start a 'new game'\n or \n 'Resume' the current game", preferredStyle: UIAlertControllerStyle.Alert)
+        var refreshAlert = UIAlertController( title: "New Game?",
+                                            message: "Would you like to start a 'new game'\n or \n 'Resume' the current game",
+                                     preferredStyle: UIAlertControllerStyle.Alert)
 
-        refreshAlert.addAction(UIAlertAction(title: "New Game", style: .Default, handler: { (action: UIAlertAction!) in
-            if self.DEBUG { println("Handle 'New Game' logic here") }
-            self.roundValue = 0
-            self.scoreValue = 0
-            self.startNewRound()
-            self.updateLabels()
-        }))
+        refreshAlert.addAction(UIAlertAction( title: "New Game",
+                                              style: .Default,
+                                            handler: { ( action: UIAlertAction!) in
+                                                if self.DEBUG { println("Handle 'New Game' logic here") }
+                                                self.roundValue = 0
+                                                self.scoreValue = 0
+                                                self.startNewRound()
+                                                self.updateLabels()
+                                            }))
 
-        refreshAlert.addAction(UIAlertAction(title: "Resume", style: .Default, handler: { (action: UIAlertAction!) in
-            if self.DEBUG { println("Handle 'Resume Game' Logic here") }
-        }))
+        refreshAlert.addAction(UIAlertAction( title: "Resume",
+                                              style: .Default,
+                                            handler: { (action: UIAlertAction!) in
+                                                if self.DEBUG { println("Handle 'Resume Game' Logic here") }
+                                            }))
 
         presentViewController(refreshAlert, animated: true, completion: nil)
      }
